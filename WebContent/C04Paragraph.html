@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        수평방향에서의 정렬
+            블럭 엘리먼트 : 컨텐츠의 양에 상관없이 하나의 블럭을 차지하므로
+                우측의 공간이 충분하여 컨텐츠는 우측 정렬된다.
+            인라인 엘리먼트 : 컨텐츠의 크기만큼만 영역을 차지하므로 컨텐츠가
+                움직일 공간이 없어 정렬되지 않는다. 만약 정렬해야 한다면
+                부모엘리먼트에서 text-align을 설정한다.
+     -->
+    <h2>문단관련 CSS 속성들</h2>
+     <!-- span을 정렬하기 위해 부모 div에 text-align:right; 필요함 -->
+    <div style = "border:1px blue dotted; width:400px">
+        <h2>컨텐츠 수평방향 정렬</h2>
+        <div style="border:1px solid red; text-align:right">
+            블럭엘리먼트
+        </div>
+        <span style="border:1px solid blue; text-align:right">
+            인라인엘리먼트 <!-- 인라인 엘리먼트는 부모쪽에서 text-align 해줘야한다. -->
+    </div>
+
+    <!-- 
+    line-height : 줄간격. 즉 라인사이의 간격을 띄우는데 블럭과 인라인은
+                조금 다르게 적용된다.
+        block : 컨텐츠의 영역 중 세로영역이 늘어나서 마치 줄간격이
+                생긴것 처럼 보여지게 된다.
+        inline : 컨텐츠의 영역은 크기의 변화가 없지만, 지정된 사이즈만큼
+                줄간격이 생겨 사이가 벌어진다.
+
+     -->
+    <h3>줄 사이의 간격</h3>
+    <h4 style="line-height:5em; border:1px solid blue;">
+        블럭엘리먼트1에 줄간격 적용
+    </h4>
+    <h4 style="border:1px solid black;">블럭 엘리먼트2</h4>
+    <h4 style="border:1px solid black;">블럭 엘리먼트3</h4>
+
+    <div class= "inline">
+        <span style="line-height:5em;border:1px solid black;">
+            인라인 엘리먼트1</span><br />
+        <span style="border:1px solid black;">인라인 엘리먼트2</span>
+        <br />
+        <span style="border:1px solid black;">인라인 엘리먼트3</span>
+    </div>
+
+    <h3>수직상태에서의 가운데 정렬</h3>
+    <!-- div박스의 height와 line-height의 값을 동일하게 지정하면
+        세로 상태에서 가운데 정렬이 된다. -->
+    <h4>블럭엘리먼트 사용시 방법1</h4>
+    <div style="border:1px solid black; height:200px; width:200px;
+     line-height:200px;">
+        나는 텍스트1
+    </div>
+    
+    <!-- 
+        div박스 내부의 padding을 지정해서 텍스트를 아래로 밀어준다.
+        이 경우 박스의 세로영역이 늘어나므로 사이즈는 별도로 조절해줘야
+        한다.
+     -->
+    <h4>블럭엘리먼트 사용시 방법2</h4>
+    <div style="border:1px solid red; height:100px; width:200px;
+     padding-top:100px;">
+        나는 텍스트2
+    </div>
+
+    <!-- 인라인 엘리먼트에서 세로상태의 가운데 정렬을 위해서는
+        vertical-align을 사용한다.
+    -->
+    <h4>인라인엘리먼트 사용시</h4>
+    <table border="1" width="300">
+        <tr>
+            <td style = "height:100px;vertical-align:top">인라인엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style = "height:100px;vertical-align:middle">인라인 엘리먼트 세로정렬</td>
+        </tr>
+        <tr>
+            <td style = "height:100px; vertical-align:bottom">인라인 엘리먼트 세로정렬</td>
+        </tr>
+    </table>
+
+    <h2>배분정렬</h2>
+    <p style="border:1px solid blue; text-align:justify;">
+        소프트뱅크그룹이 미국의 로봇 전문업체 보스턴 다이내믹스를 현대차에 매각하는 방안을 논의 중이라고 블룸버그통신이 10일 보도했다.
+        <br> <br>
+        블룸버그 보도에 따르면 이번 거래는 최대 10억달러(약 1조1천350억원) 규모다.
+        <br> <br>
+        로봇 개 `스폿`으로 유명한 보스턴 다이내믹스는 1992년 매사추세츠공과대학(MIT)에서 분사해 설립됐으며 2013년 구글에 인수됐다가 2017년 7월 소프트뱅크에 팔렸다. 2015년 처음 선보인 `스폿`은 360도 카메라를 장착하고 네 발로 초당 1.58ｍ의 속도로 뛰거나 계단을 오를 수 있으며 방수 기능도 갖췄다.
+        <br> <br>
+        다만 보스턴 다이내믹스는 연구 중심 조직이어서 스폿 외에도 기발한 로봇을 내놨지만 사업화에 크게 성공하지는 못했다.
+        <br> <br>
+        소식통은 매각 조건은 아직 확정되지 않았고 협상이 중간에 깨질 가능성도 있다고 전했다.
+        <br> <br>
+        이번 인수가 성사되면 현대차그룹의 미래 신성장 동력 창출도 한층 가속화할 것으로 보인다.
+        <br> <br>
+        정의선 현대차그룹 회장은 향후 그룹의 핵심 사업 분야로 도심항공모빌리티(UAM)와 함께 로보틱스 사업을 제시해왔다.
+        <br> <br>
+        정 회장은 작년 10월 열린 임직원과의 타운홀 미팅에서 "미래에는 자동차가 50%가 되고 30%는 개인항공기(PAV), 20%는 로보틱스가 될 것이라 생각하며 그 안에서 서비스를 주로 하는 회사로 변모할 것"이라고 말했다.
+        <br> <br>
+        현대차그룹은 `미래 모빌리티 솔루션 기업`으로 체질을 개선하기 위해 과감한 투자와 협업, 인재 영입 등을 진행하고 있다. 로봇 기술은 자율주행을 비롯한 미래 모빌리티 산업 전반에 있어 밀접하게 연관돼 있다.
+        <br> <br>
+        현대차그룹은 앞서 작년 5월 미국 로봇 스타트업 리얼타임로보틱스에 17억5천500만원을 출자해 지분 2.62%를 확보했다. 리얼타임로보틱스가 개발한 로봇 프로세서는 자율주행차에 적용할 예정으로 글로벌 자동차업체 등으로부터 투자를 받은 것으로 전해졌다.
+        <br> <br>
+        현대·기아차는 자율주행차 `두뇌` 역할을 하는 인공지능 기반 통합 제어기와 센서 개발을 위해 미국 인텔과 엔비디아와 협력하고 중국의 바이두가 주도하는 자율주행차 개발 프로젝트인 `아폴로 프로젝트`에도 참여하고 있다.
+        <br> <br>
+        현대차 관계자는 "언제나 다양한 전략적 투자와 제휴 기회를 모색하고 있으나, 결정된 사항은 없다"고 말했다.
+        <br> <br>
+    </p>
+    <!-- 
+        text-indent: 문단에서 들여쓰기할때 사용한다.
+            Block : 첫번째줄의 문장이 지정한만큼 들여쓰기된다.
+            inline : 컨텐츠의 영역에 잔여공간이 없으므로 들여쓰기
+                    되지 않는다. 이때는 부모엘리먼트에서 padding을
+                    통해 밀어줘야 한다.
+
+     -->
+    <h2>들여쓰기</h2>
+    <div style = "border:1px solid red; text-indent:1em;">
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+        블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;블럭엘리먼트&nbsp;
+    </div>
+    <div style = "border:1px solid blue; padding-left:10px;">
+        <span style= "border:1px solid #000000; text-indent:10em;">
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;인라인엘리먼트&nbsp;
+        </span>
+    </div>
+
+    </span>
+</body>
+</html>
